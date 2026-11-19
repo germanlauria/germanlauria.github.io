@@ -16,7 +16,7 @@ window.JUEGOS.uptime = {
   modulo: "Game",
   orden: 1,
   activo: true,
-  icono: "🐞",
+  icono: "img/juegos/uptime.svg",    // ícono del menú: una imagen (img/juegos/…) o un emoji
   nombre: { es: "UPTIME", en: "UPTIME" },
   descripcion: {
     es: "Caen bugs con palabras: escribí la traducción antes de que lleguen al servidor. Español → Inglés, Inglés → Español o Mixto.",

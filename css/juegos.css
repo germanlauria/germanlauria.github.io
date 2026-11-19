@@ -6,10 +6,13 @@
 .j-head p{margin:0}
 .j-list{display:grid;gap:12px}
 .j-card{display:flex;align-items:center;gap:14px;width:100%;text-align:left;padding:14px 16px;border-radius:12px;border:1px solid rgba(127,140,160,.35);background:transparent;color:inherit;font:inherit;cursor:pointer;transition:transform .15s,border-color .15s,box-shadow .15s}
-.j-card:hover,.j-card:focus-visible{transform:translateY(-2px);border-color:#1f6feb;box-shadow:0 6px 18px rgba(31,111,235,.18);outline:none}
-.j-ico{font-size:30px;flex:none;width:52px;height:52px;display:grid;place-items:center;border-radius:12px;background:rgba(31,111,235,.12)}
+.j-card:hover,.j-card:focus-visible{transform:translateY(-2px);border-color:var(--lk,#1f6feb);box-shadow:0 6px 18px rgba(0,0,0,.25);outline:none}
+.j-ico{font-size:30px;flex:none;width:64px;height:64px;display:grid;place-items:center;border-radius:14px;background:rgba(31,111,235,.12)}
+.j-ico:has(img){background:none}
+.j-ico img{width:64px;height:64px;display:block;filter:drop-shadow(0 4px 10px rgba(0,0,0,.35));transition:transform .2s}
+.j-card:hover .j-ico img{transform:scale(1.08) rotate(-3deg)}
 .j-txt{flex:1;display:grid;gap:3px}
 .j-txt b{font-size:17px}
 .j-txt span{font-size:13px;opacity:.75;line-height:1.4}
-.j-play{flex:none;font-weight:700;color:#1f6feb;font-size:14px}
+.j-play{flex:none;font-weight:700;color:var(--lk,#1f6feb);font-size:14px}
 @media (max-width:520px){.j-play{display:none}}

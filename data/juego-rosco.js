@@ -18,7 +18,7 @@ window.JUEGOS.rosco = {
   modulo: "Rosco",
   orden: 2,
   activo: true,
-  icono: "🔤",
+  icono: "img/juegos/rosco.svg",    // ícono del menú: una imagen (img/juegos/…) o un emoji
   nombre: { es: "El Rosco", en: "The Rosco" },
   descripcion: {
     es: "Una palabra por cada letra del abecedario: adiviná cuál es a partir de su definición antes de que se acabe el tiempo.",

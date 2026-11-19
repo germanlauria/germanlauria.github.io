@@ -1,0 +1,77 @@
+/* ============================================================================
+   TEMAS GAMING — se eligen desde el selector de la barra de arriba (se guarda en el navegador).
+   Cada tema cambia las variables de colores de styles.css y agrega algunos detalles propios.
+     neon   → Neon Miami: atardecer rosa/naranja, neón turquesa y palmeras (onda GTA 6)
+     arcade → Arcade: fichines retro, verde fósforo y líneas de monitor viejo
+     cyber  → Cyber: amarillo y negro, esquinas cortadas, efecto glitch
+   Las fuentes "Bahnschrift" e "Impact" vienen con Windows; si no están, se usa otra parecida.
+   ============================================================================ */
+
+/* ---------- NEON MIAMI ---------- */
+[data-theme=neon]{--bg:#120821;--sf:rgba(28,12,50,.84);--tx:#fdf1ff;--mu:#cfa9ec;--bd:rgba(255,92,190,.28);--ac:#ff2d95;--lk:#2de2e6;
+  --soft:rgba(255,45,149,.15);--row:rgba(45,226,230,.06);--er:#ff5c7a;--ok:#3dffb5;--wn:#ffb84d;--sh:0 10px 40px rgba(255,45,149,.15);
+  --fh:"Bahnschrift SemiBold SemiConden","Bahnschrift SemiCondensed","Bahnschrift","Oswald","Arial Narrow",Impact,sans-serif;color-scheme:dark}
+[data-theme=neon] body{background:linear-gradient(180deg,#0b0520 0%,#1d0a3a 38%,#4a1258 70%,#a8235f 92%,#ff7a3d 120%) fixed}
+[data-theme=neon] body::before{content:"";position:fixed;inset:auto 0 0 0;height:46vh;pointer-events:none;z-index:-1;opacity:.55;
+  background:url("../img/temas/neon-fondo.svg") center bottom/cover no-repeat}
+[data-theme=neon] .top{background:linear-gradient(90deg,rgba(255,45,149,.22),rgba(20,8,40,.75) 40%,rgba(45,226,230,.16));backdrop-filter:blur(10px);border-bottom:0;box-shadow:0 2px 0 0 #ff2d95,0 4px 18px rgba(255,45,149,.45)}
+[data-theme=neon] .logo{background:linear-gradient(135deg,#ff2d95,#ff9e3d);transform:skewX(-10deg);font-family:var(--fh);font-style:italic;font-size:16px;box-shadow:0 0 16px rgba(255,45,149,.7)}
+[data-theme=neon] .brand h1,[data-theme=neon] .mhead h2,[data-theme=neon] .dhead h2,[data-theme=neon] .j-head h2{font-family:var(--fh);font-style:italic;text-transform:uppercase;letter-spacing:.04em}
+[data-theme=neon] .brand h1{font-size:20px;text-shadow:0 0 12px rgba(255,45,149,.8)}
+[data-theme=neon] .mhead h2{font-size:34px;background:linear-gradient(90deg,#ffe66b,#ff7a3d 40%,#ff2d95);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 10px rgba(255,45,149,.5))}
+[data-theme=neon] .btn{border-radius:4px;transform:skewX(-8deg);font-family:var(--fh);text-transform:uppercase;letter-spacing:.05em}
+[data-theme=neon] .btn.primary{background:linear-gradient(90deg,#ff2d95,#ff7a3d);border:0;box-shadow:0 0 18px rgba(255,45,149,.55)}
+[data-theme=neon] .btn.play{background:transparent;border:2px solid #2de2e6;color:#2de2e6;box-shadow:0 0 14px rgba(45,226,230,.45),inset 0 0 10px rgba(45,226,230,.25)}
+[data-theme=neon] .table{backdrop-filter:blur(8px);border-color:rgba(45,226,230,.35)}
+[data-theme=neon] .thead{background:rgba(255,45,149,.12);color:#ffb3dc}
+[data-theme=neon] .letter{background:linear-gradient(90deg,rgba(255,45,149,.35),transparent);color:#fff;font-family:var(--fh);font-style:italic;font-size:15px}
+[data-theme=neon] .row:hover{box-shadow:inset 4px 0 0 #2de2e6}
+[data-theme=neon] .catb.on{background:linear-gradient(90deg,rgba(255,45,149,.35),transparent);color:#fff}
+[data-theme=neon] dialog{background:#1a0b33;border-color:#ff2d95;box-shadow:0 0 40px rgba(255,45,149,.35)}
+
+/* ---------- ARCADE ---------- */
+[data-theme=arcade]{--bg:#06060b;--sf:#0e0f16;--tx:#eaffea;--mu:#86c991;--bd:#24412c;--ac:#39ff14;--lk:#ffe600;--soft:rgba(57,255,20,.1);
+  --row:#0a0d0d;--er:#ff3864;--ok:#39ff14;--wn:#ffe600;--sh:none;--fh:"Cascadia Mono",Consolas,"Courier New",monospace;color-scheme:dark}
+[data-theme=arcade] body{font-family:var(--fh);background:radial-gradient(ellipse at top,#10141f,#06060b 60%)}
+[data-theme=arcade] body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;
+  background:repeating-linear-gradient(0deg,rgba(0,0,0,.22) 0 1px,transparent 1px 3px);mix-blend-mode:multiply}
+[data-theme=arcade] *{border-radius:0!important}
+[data-theme=arcade] .top{border-bottom:3px solid #39ff14;box-shadow:0 3px 0 #ff00e6}
+[data-theme=arcade] .logo{background:#ff00e6;color:#06060b;font-family:var(--fh);font-weight:900;box-shadow:4px 4px 0 #39ff14}
+[data-theme=arcade] .brand h1,[data-theme=arcade] .mhead h2,[data-theme=arcade] .j-head h2,[data-theme=arcade] .dhead h2{text-transform:uppercase;letter-spacing:.08em}
+[data-theme=arcade] .brand h1{color:#39ff14;text-shadow:0 0 8px rgba(57,255,20,.8)}
+[data-theme=arcade] .mhead h2{color:#ffe600;font-size:26px;text-shadow:3px 3px 0 #ff00e6}
+[data-theme=arcade] .btn{border:2px solid var(--tx);text-transform:uppercase;box-shadow:4px 4px 0 #ff00e6;transition:transform .05s,box-shadow .05s}
+[data-theme=arcade] .btn:active{transform:translate(4px,4px);box-shadow:none}
+[data-theme=arcade] .btn.primary{background:#39ff14;border-color:#39ff14;color:#06060b}
+[data-theme=arcade] .btn.play{background:#ffe600;border-color:#ffe600;color:#06060b;animation:arcBlink 1.2s steps(1) infinite}
+@keyframes arcBlink{50%{box-shadow:4px 4px 0 #00e5ff}}
+[data-theme=arcade] .table{border:2px solid #39ff14;box-shadow:6px 6px 0 #ff00e6}
+[data-theme=arcade] .letter{color:#ffe600;background:#0e0f16}
+[data-theme=arcade] .row:hover{background:rgba(57,255,20,.08);box-shadow:inset 4px 0 0 #ffe600}
+[data-theme=arcade] .term b{color:#eaffea}
+[data-theme=arcade] dialog{border:3px solid #39ff14;box-shadow:8px 8px 0 #ff00e6}
+
+/* ---------- CYBER ---------- */
+[data-theme=cyber]{--bg:#0a0a0d;--sf:#121217;--tx:#f2f2f2;--mu:#a3a7ad;--bd:#34340f;--ac:#fcee0a;--lk:#00f0ff;--soft:rgba(252,238,10,.08);
+  --row:#0f0f13;--er:#ff003c;--ok:#00ff9c;--wn:#fcee0a;--sh:none;--fh:"Bahnschrift Condensed","Bahnschrift","Arial Narrow",Impact,sans-serif;color-scheme:dark}
+[data-theme=cyber] body{background:#0a0a0d linear-gradient(90deg,rgba(252,238,10,.03) 1px,transparent 1px) 0 0/40px 40px}
+[data-theme=cyber] .top{background:#0a0a0d;border-bottom:2px solid #fcee0a}
+[data-theme=cyber] .logo{background:#fcee0a;color:#0a0a0d;font-family:var(--fh);font-weight:800;clip-path:polygon(0 0,100% 0,100% 70%,70% 100%,0 100%)}
+[data-theme=cyber] .brand h1,[data-theme=cyber] .mhead h2,[data-theme=cyber] .j-head h2,[data-theme=cyber] .dhead h2{font-family:var(--fh);text-transform:uppercase;letter-spacing:.06em}
+[data-theme=cyber] .brand h1{font-size:20px;color:#fcee0a}
+[data-theme=cyber] .brand h1:hover{text-shadow:2px 0 #ff003c,-2px 0 #00f0ff;animation:cyGlitch .3s steps(2) infinite}
+@keyframes cyGlitch{50%{transform:translateX(1px)}}
+[data-theme=cyber] .mhead h2{font-size:32px;color:#fcee0a}
+[data-theme=cyber] .btn{font-family:var(--fh);text-transform:uppercase;letter-spacing:.06em;border-radius:0;clip-path:polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,10px 100%,0 calc(100% - 10px))}
+[data-theme=cyber] .btn.primary{background:#fcee0a;border-color:#fcee0a;color:#0a0a0d}
+[data-theme=cyber] .btn.play{background:#00f0ff;border-color:#00f0ff;color:#0a0a0d}
+[data-theme=cyber] .table{border:1px solid #fcee0a;border-radius:0;clip-path:polygon(0 0,calc(100% - 22px) 0,100% 22px,100% 100%,0 100%)}
+[data-theme=cyber] .thead{background:#fcee0a;color:#0a0a0d}
+[data-theme=cyber] .letter{color:#00f0ff;font-family:var(--fh);font-size:14px}
+[data-theme=cyber] .row:hover{box-shadow:inset 4px 0 0 #00f0ff}
+[data-theme=cyber] .catb.on{background:#fcee0a;color:#0a0a0d}
+[data-theme=cyber] dialog{border:1px solid #fcee0a;border-radius:0}
+
+/* ---------- selector de tema ---------- */
+#themeSel{max-width:150px}

@@ -39,7 +39,7 @@ window.JUEGOS.historia = {
   modulo: "Historia",
   orden: 3,
   activo: true,
-  icono: "🌃",
+  icono: "img/juegos/historia.svg",    // ícono del menú: una imagen (img/juegos/…) o un emoji
   nombre: { es: "In this city…", en: "In this city…" },
   descripcion: {
     es: "Historias interactivas al estilo de los videos \"In this city…\": escuchá la narración en inglés y elegí o escribí la palabra correcta para seguir. Tus respuestas cambian el final.",

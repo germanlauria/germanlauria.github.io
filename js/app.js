@@ -15,7 +15,10 @@ function showError(e,where){
 window.addEventListener('error',e=>showError(e));
 window.addEventListener('unhandledrejection',e=>showError(e.reason,'promesa'));
 let lang=localStorage.getItem('glosario.lang')||'es';
+// temas: claro, oscuro y los gaming de css/temas.css
+const THEMES=[['light','☀ Claro','☀ Light'],['dark','☾ Oscuro','☾ Dark'],['neon','🌴 Neon Miami','🌴 Neon Miami'],['arcade','👾 Arcade','👾 Arcade'],['cyber','⚡ Cyber','⚡ Cyber']];
 let theme=localStorage.getItem('glosario.theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');
+if(!THEMES.some(t=>t[0]===theme))theme='dark';
 const t=k=>I18N[lang][k]??k;
 const catName=c=>CATS[c]?CATS[c][lang]:c;
 const view={q:'',cat:''};
@@ -34,7 +37,7 @@ function filtered(){
     .filter(w=>(!view.cat||w.category===view.cat)&&(!q||strip((w.term+' '+w.es).toLowerCase()).includes(q)))
     .map(V).sort((a,b)=>a.head.localeCompare(b.head,lang==='en'?'es':'en'));
 }
-function applyTheme(){document.documentElement.dataset.theme=theme;$('#themeBtn').textContent=theme==='dark'?'☀':'☾'}
+function applyTheme(){document.documentElement.dataset.theme=theme;const s=$('#themeSel');if(s){s.innerHTML=THEMES.map(t=>`<option value="${t[0]}">${lang==='en'?t[2]:t[1]}</option>`).join('');s.value=theme}}
 function renderStatus(){
   const b=$('#fileBtn'),s=Store.state,dirty=Store.dirty();
   b.className='chip '+(s==='ok'&&!dirty?'ok':'warn');
@@ -118,7 +121,7 @@ $('#q').oninput=e=>{view.q=e.target.value;refresh()};
 $('#addBtn').onclick=()=>openForm();
 $('#practiceBtn').onclick=()=>Practice.open(filtered());
 $('#lang').onchange=e=>{lang=e.target.value;localStorage.setItem('glosario.lang',lang);renderStatic()};
-$('#themeBtn').onclick=()=>{theme=theme==='dark'?'light':'dark';localStorage.setItem('glosario.theme',theme);applyTheme()};
+$('#themeSel').onchange=e=>{theme=e.target.value;try{localStorage.setItem('glosario.theme',theme)}catch(_){}applyTheme()};
 $('#fileBtn').onclick=async()=>{
   if(Store.state==='ok'&&!Store.dirty())return;
   try{await Store.connect()}catch(e){}
