@@ -1,0 +1,14 @@
+const I18N={
+es:{subtitle:"Inglés técnico · Análisis de Sistemas",all:"Todas",hTerm:"Término",hPron:"Pronunciación",hTrans:"Traducción",hCat:"Categoría",cats:"Categorías",index:"Índice",listTitle:"Glosario",game:"Jugar",search:"Buscar palabra o traducción…",allCat:"Todas las categorías",allUnit:"Todas las unidades",unit:"Unidad",add:"+ Nueva palabra",practice:"Practicar",export:"Exportar JSON",connect:"Conectar archivo",reconnect:"Reconectar archivo",saved:"● Guardado en archivo",unsaved:"Cambios sin guardar",nofs:"Guardado manual (usá Chrome)",words:"términos",none:"No hay resultados.",listen:"Escuchar",slow:"Lento",edit:"Editar",del:"Eliminar",confirmDel:"¿Eliminar",addTitle:"Nueva palabra",editTitle:"Editar palabra",fTerm:"Palabra (inglés)",fPron:"Pronunciación",fEs:"Traducción (español)",fType:"Tipo",fUnit:"Unidad",fCat:"Categoría",fEx:"Frase de ejemplo (inglés)",fExEs:"Ejemplo traducido",fNote:"Nota",save:"Guardar",cancel:"Cancelar",dup:"Esa palabra ya existe.",tapFlip:"Tocá para ver la traducción",ex:"Ejemplo",def:"Definición",fDef:"Definición (inglés)",fDefEs:"Definición (español)",rosco:"Rosco",games:"🎮 Juegos"},
+en:{subtitle:"Technical English · Systems Analysis",all:"All",hTerm:"Term",hPron:"Pronunciation",hTrans:"Translation",hCat:"Category",cats:"Categories",index:"Index",listTitle:"Glossary",game:"Play",search:"Search word or translation…",allCat:"All categories",allUnit:"All units",unit:"Unit",add:"+ New word",practice:"Practice",export:"Export JSON",connect:"Connect file",reconnect:"Reconnect file",saved:"● Saved to file",unsaved:"Unsaved changes",nofs:"Manual saving (use Chrome)",words:"terms",none:"No results.",listen:"Listen",slow:"Slow",edit:"Edit",del:"Delete",confirmDel:"Delete",addTitle:"New word",editTitle:"Edit word",fTerm:"Word (English)",fPron:"Pronunciation",fEs:"Translation (Spanish)",fType:"Type",fUnit:"Unit",fCat:"Category",fEx:"Example sentence (English)",fExEs:"Translated example",fNote:"Note",save:"Save",cancel:"Cancel",dup:"That word already exists.",tapFlip:"Tap to see the translation",ex:"Example",def:"Definition",fDef:"Definition (English)",fDefEs:"Definition (Spanish)",rosco:"Rosco",games:"🎮 Games"}};
+const CATS={
+hardware:{es:"Hardware",en:"Hardware"},
+ports:{es:"Placa madre y puertos",en:"Motherboard & ports"},
+memory:{es:"Memoria y almacenamiento",en:"Memory & storage"},
+langs:{es:"Lenguajes de programación",en:"Programming languages"},
+dev:{es:"Desarrollo de software",en:"Software development"},
+web:{es:"Web y front-end",en:"Web & front-end"},
+data:{es:"Datos e IA",en:"Data & AI"},
+networks:{es:"Redes e Internet",en:"Networks & Internet"},
+security:{es:"Seguridad informática",en:"Cybersecurity"},
+phrasal:{es:"Phrasal verbs técnicos",en:"Technical phrasal verbs"}};

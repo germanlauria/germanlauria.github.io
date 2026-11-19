@@ -1,0 +1,161 @@
+/* HISTORIAS "IN THIS CITY…" — reutiliza .g-card, .g-btn, .g-seg, .g-how, etc. de game.css */
+#historia{width:min(1040px,96vw);height:min(760px,94vh);max-height:none;padding:0;background:#03050b;color:#f2f5fb;border:1px solid #1e2a44;border-radius:12px;overflow:hidden;flex-direction:column;font-family:"Segoe UI",system-ui,sans-serif;position:relative;outline:none}
+#historia[open]{display:flex}
+#historia::backdrop{background:rgba(1,2,6,.88)}
+#historia .g-ov{background:rgba(3,5,11,.93);place-items:start center}
+#historia .g-ov>.g-card{margin:auto 0}
+.h-top{position:relative;z-index:4;display:flex;align-items:center;gap:16px;padding:10px 14px;background:#05080f;border-bottom:1px solid rgba(120,150,220,.15)}
+.h-logo{font:800 16px ui-monospace,Consolas,monospace;letter-spacing:.18em;color:#f2f5fb;white-space:nowrap}
+.h-prog{flex:1;height:3px;border-radius:2px;background:rgba(255,255,255,.12);overflow:hidden;max-width:420px}
+.h-prog i{display:block;height:100%;width:0;background:#fff}
+.h-h{color:#f2f5fb;font-family:Georgia,"Times New Roman",serif;font-style:italic;letter-spacing:.04em}
+.h-endk{margin:0 0 4px;letter-spacing:.3em;font-size:12px}
+
+/* escenario */
+.h-stage{position:relative;flex:1;overflow:hidden;cursor:pointer;display:flex;align-items:center;justify-content:center;min-height:0}
+.h-sky,.h-sky div,.h-rain,.h-vig{position:absolute;inset:0;pointer-events:none}
+.h-sky div{opacity:0;transition:opacity 1.6s ease}
+.sky-noche{background:radial-gradient(ellipse at 50% 110%,#1b2c63 0%,#0a1230 45%,#03050b 100%)}
+.sky-alerta{background:radial-gradient(ellipse at 50% 110%,#7a1020 0%,#2a0610 45%,#070103 100%);animation:hpulse 2.4s ease-in-out infinite}
+.sky-apagon{background:radial-gradient(ellipse at 50% 110%,#0d1220 0%,#03040a 60%,#000 100%)}
+.sky-verde{background:radial-gradient(ellipse at 50% 110%,#0f5a3e 0%,#062619 45%,#020a06 100%)}
+.sky-sotano{background:radial-gradient(ellipse at 50% 60%,#3a2a10 0%,#160f05 50%,#050301 100%)}
+.sky-amanecer{background:linear-gradient(#1b1840 0%,#5b3a6e 40%,#d9785a 78%,#f3b26b 100%)}
+.f-noche .sky-noche,.f-alerta .sky-alerta,.f-apagon .sky-apagon,.f-verde .sky-verde,.f-sotano .sky-sotano,.f-amanecer .sky-amanecer{opacity:1}
+@keyframes hpulse{50%{filter:brightness(1.35)}}
+
+.h-city{position:absolute;left:0;right:0;bottom:0;width:100%;height:58%;pointer-events:none;transition:opacity 1.6s,filter 1.6s}
+.h-city .far rect{fill:#0b1226;opacity:.8}
+.h-city .b{fill:#060a17}
+.h-city .w{fill:#ffd58a;opacity:.75;transition:opacity 1.2s,fill 1.2s}
+.h-city .w.fl{animation:hflick 5s steps(1) infinite}
+@keyframes hflick{0%{opacity:.75}47%{opacity:.1}50%{opacity:.75}83%{opacity:.2}85%{opacity:.75}}
+.f-alerta .h-city .w{fill:#ff6b6b}
+.f-apagon .h-city .w{opacity:.04;animation:none}
+.f-verde .h-city .w{fill:#7ee7b0}
+.f-sotano .h-city{opacity:.12;filter:blur(2px)}
+.f-amanecer .h-city .b{fill:#1e1530}.f-amanecer .h-city .far rect{fill:#4a2f55}.f-amanecer .h-city .w{opacity:.25}
+
+.h-rain{background-image:repeating-linear-gradient(105deg,rgba(255,255,255,.06) 0 1px,transparent 1px 9px);background-size:200px 200px;animation:hrain .6s linear infinite;opacity:.5;mix-blend-mode:screen}
+.f-amanecer .h-rain,.f-sotano .h-rain{opacity:0}
+@keyframes hrain{to{background-position:-40px 200px}}
+.h-vig{background:radial-gradient(ellipse at center,transparent 45%,rgba(0,0,0,.75) 100%)}
+
+/* texto estilo video */
+.h-box{position:relative;z-index:2;width:min(780px,92%);text-align:center;padding:20px 0 30px;cursor:pointer}
+.h-text{margin:0;font:700 clamp(22px,3.6vh,36px)/1.35 "Segoe UI",system-ui,sans-serif;text-shadow:0 2px 14px rgba(0,0,0,.95),0 0 2px #000}
+.h-text.long{font-size:clamp(19px,3vh,29px)}
+.h-w{display:inline-block;opacity:0;transform:translateY(8px);filter:blur(4px);transition:opacity .35s,transform .35s,filter .35s}
+.h-w.in{opacity:1;transform:none;filter:none}
+.h-key{color:#ffd33d;border-bottom:2px dotted rgba(255,211,61,.5);cursor:help}
+.h-blank{display:inline-block;min-width:3.2em;padding:0 .3em;border-bottom:3px solid #58a6ff;color:#58a6ff;animation:hblink 1.1s ease-in-out infinite}
+.h-blank.ok{color:#7ee787;border-color:#3fb950;animation:none}
+.h-blank.bad{color:#ff9a95;border-color:#f85149;animation:none}
+@keyframes hblink{50%{border-color:transparent}}
+.h-sub{margin:14px auto 0;max-width:640px;font-size:clamp(14px,2vh,17px);color:#c9d4ea;background:rgba(0,0,0,.55);border-radius:6px;padding:6px 12px;display:inline-block;opacity:0;transition:opacity .8s}
+.h-sub.in{opacity:1}
+.h-sub:empty{display:none}
+
+/* preguntas */
+.h-q{margin-top:22px}
+.h-q:empty{display:none}
+.h-lbl{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#9fb0c8;margin-bottom:10px}
+.h-ops{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.h-ops.path{flex-direction:column;align-items:center}
+.h-op{display:flex;align-items:center;gap:10px;background:rgba(10,16,32,.85);color:#f2f5fb;border:1px solid #3a4a6b;border-radius:10px;padding:11px 18px;font-size:17px;font-weight:600;cursor:pointer;backdrop-filter:blur(4px);text-align:left;transition:transform .15s,border-color .15s}
+.h-ops.path .h-op{min-width:min(440px,90%)}
+.h-op:hover:not(:disabled){border-color:#58a6ff;transform:translateY(-2px)}
+.h-op:disabled{cursor:default;opacity:.55}
+.h-op kbd{font:700 12px ui-monospace,Consolas,monospace;background:#1b2740;border:1px solid #33456a;border-radius:4px;padding:2px 7px;color:#9fb0c8}
+.h-op small{display:block;font-size:13px;font-weight:400;color:#9fb0c8;margin-top:2px}
+.h-op small[hidden]{display:none}
+.h-op.good{opacity:1!important;border-color:#3fb950;background:rgba(13,47,29,.9)}
+.h-op.bad{opacity:1!important;border-color:#f85149;background:rgba(58,18,18,.9)}
+.h-op.pick{opacity:1!important;border-color:#ffd33d;background:rgba(58,46,8,.9)}
+.h-form{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.h-form input{width:min(320px,80vw);background:rgba(5,10,22,.9);color:#fff;border:1px solid #3a4a6b;border-radius:8px;padding:11px 12px;font-size:17px;text-align:center}
+.h-form input:focus{outline:2px solid #58a6ff;outline-offset:1px}
+.h-form .g-btn{margin:0}
+.h-hint{min-height:20px;margin-top:8px;font-size:14px;color:#c9d4ea}
+.h-dash{letter-spacing:.1em;color:#7d8da6}
+.h-fb{min-height:24px;margin-top:12px;font-size:17px;text-shadow:0 1px 6px #000}
+.h-fb.good{color:#7ee787}.h-fb.wrong{color:#ff9a95}
+.h-fb small{color:#c9d4ea;font-size:15px}
+.h-cont{min-height:22px;margin-top:18px;font-size:13px;letter-spacing:.08em;color:#9fb0c8}
+.h-cont span{animation:hfade 1.6s ease-in-out infinite}
+@keyframes hfade{50%{opacity:.35}}
+
+/* pantalla de inicio y final */
+.h-stories{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin:0 0 16px}
+.h-story{display:flex;flex-direction:column;gap:4px;text-align:left;background:#0b1222;border:1px solid #243249;border-radius:10px;padding:12px 14px;color:#d7e3f4;cursor:pointer}
+.h-story b{font:italic 700 19px Georgia,"Times New Roman",serif;color:#fff}
+.h-story span{font-size:13px;color:#9fb0c8}
+.h-story em{font-style:normal;font-size:11px;letter-spacing:.08em;color:#7d8da6;text-transform:uppercase}
+.h-story.on{border-color:#58a6ff;box-shadow:0 0 0 2px rgba(88,166,255,.35)}
+.h-ends{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:6px}
+.h-ends span{border:1px dashed #33456a;border-radius:999px;padding:3px 12px;font-size:12px;color:#7d8da6;font-weight:700;letter-spacing:.06em}
+.h-ends span.on{border-style:solid;border-color:#d29922;color:#f0c75e}
+@media (max-width:700px){.h-prog{display:none}.h-op{font-size:15px}}
+
+/* selector de voz */
+#historia select{background:#0a1220;color:#e8f1ff;border:1px solid #2b3b57;border-radius:6px;padding:8px 10px;max-width:min(360px,70vw)}
+.h-test{padding:8px 14px}
+
+/* personajes 2D */
+.h-stage.has-cast{align-items:flex-start}
+.h-stage.has-cast .h-box{padding-top:min(4vh,30px)}
+.h-cast{position:absolute;left:0;right:0;bottom:0;height:44%;z-index:1;pointer-events:none}
+.ch{position:absolute;bottom:3%;height:94%;aspect-ratio:120/232;transform:translateX(-50%);transition:left .7s cubic-bezier(.4,1.3,.5,1),opacity .45s,filter .4s,transform .45s}
+.ch svg{display:block;height:100%;width:100%;overflow:visible}
+.ch.enter{animation:chIn .65s cubic-bezier(.2,1.5,.4,1)}
+.ch.out{opacity:0;transform:translate(-50%,18%)}
+@keyframes chIn{from{opacity:0;transform:translate(-50%,40%) scale(.8)}to{opacity:1;transform:translate(-50%,0)}}
+.h-cast.has-speaker .ch:not(.speak){filter:brightness(.55) saturate(.8)}
+.ch.speak{z-index:2}
+.c-shadow{fill:rgba(0,0,0,.45)}
+.ch g,.ch path,.ch ellipse{transform-box:fill-box}
+.c-all{transform-origin:50% 100%}
+.c-bob{transform-origin:50% 100%;animation:chBreath 3.2s ease-in-out infinite;animation-delay:var(--d,0s)}
+.c-headg{transform-origin:50% 90%;animation:chBob 3.2s ease-in-out infinite;animation-delay:var(--d,0s)}
+.c-headt{transform-origin:50% 90%;transition:transform .5s}
+.c-arm{transform-origin:50% 8%;animation:chArm 3.2s ease-in-out infinite;animation-delay:var(--d,0s)}
+.c-arm-r{animation-direction:reverse}
+.c-eye{transform-origin:center;animation:chBlink 4.6s infinite;animation-delay:var(--d,0s)}
+.c-eyes{transform-origin:center;transition:transform .3s}
+.c-brow{transform-origin:center;transition:transform .35s}
+@keyframes chBreath{50%{transform:scaleY(1.018)}}
+@keyframes chBob{50%{transform:translateY(1.5px) rotate(.6deg)}}
+@keyframes chArm{50%{transform:rotate(3deg)}}
+@keyframes chBlink{0%,93%,100%{transform:scaleY(1)}96%{transform:scaleY(.1)}}
+
+/* bocas y emociones */
+.c-m,.c-blush{display:none}
+.ch.e-normal .m-normal,.ch.e-feliz .m-feliz,.ch.e-triste .m-triste,.ch.e-sorpresa .m-sorpresa,.ch.e-enojado .m-enojado,.ch.e-miedo .m-miedo,.ch.e-pensando .m-pensando{display:inline}
+.ch.talk .c-m{display:none!important}
+.ch.talk .m-open{display:inline!important;transform-origin:center;animation:chTalk .17s ease-in-out infinite alternate}
+@keyframes chTalk{from{transform:scaleY(.25)}to{transform:scaleY(1.1)}}
+.ch.e-feliz .c-blush{display:inline}
+.ch.e-feliz .c-all{animation:chHop .45s ease-out 2}
+.ch.e-sorpresa .c-all{animation:chJump .5s ease-out}
+.ch.e-sorpresa .c-eyes{transform:scale(1.25)}
+.ch.e-sorpresa .c-brow,.ch.e-miedo .c-brow{transform:translateY(-4px)}
+.ch.e-miedo .c-all{animation:chShiver .12s linear infinite}
+.ch.e-enojado .c-all{animation:chStomp .3s ease-in-out 2}
+.ch.e-enojado .c-brow-l{transform:translateY(2px) rotate(20deg)}
+.ch.e-enojado .c-brow-r{transform:translateY(2px) rotate(-20deg)}
+.ch.e-triste .c-brow-l{transform:rotate(-16deg)}
+.ch.e-triste .c-brow-r{transform:rotate(16deg)}
+.ch.e-triste .c-headt{transform:translateY(4px) rotate(-5deg)}
+.ch.e-pensando .c-headt{transform:rotate(7deg)}
+.ch.e-pensando .c-brow-l{transform:translateY(-3px)}
+.ch.e-pensando .c-eyes{transform:translate(2px,-2px)}
+@keyframes chHop{40%{transform:translateY(-8%)}}
+@keyframes chJump{30%{transform:translateY(-12%) scale(1.03,.97)}60%{transform:translateY(0) scale(1.04,.96)}}
+@keyframes chShiver{25%{transform:translateX(-1.5px)}75%{transform:translateX(1.5px)}}
+@keyframes chStomp{25%{transform:rotate(-3deg)}75%{transform:rotate(3deg)}}
+
+/* nombre de quien habla */
+.h-who{display:inline-block;margin-bottom:10px;padding:3px 14px;border-radius:999px;background:#ffd33d;color:#1b1f23;font:800 12px ui-monospace,Consolas,monospace;letter-spacing:.2em;text-transform:uppercase;opacity:0;transform:translateY(6px);transition:opacity .3s,transform .3s}
+.h-who.in{opacity:1;transform:none}
+.h-who:empty{display:none}
+@media (max-width:700px){.h-cast{height:34%}}

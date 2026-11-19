@@ -1,0 +1,50 @@
+VOCES NATURALES PARA LA HISTORIA "IN THIS CITY…"
+=================================================
+
+Las voces que trae el navegador (sobre todo en Chrome) suenan robóticas.
+Esta herramienta graba cada frase de las historias con una voz neuronal de Microsoft
+(la misma tecnología de "Leer en voz alta" de Edge) y la guarda como .mp3.
+Después el juego reproduce esos audios en cualquier navegador, sin internet.
+
+CÓMO SE USA (una sola vez, y otra vez cada vez que cambies textos de las historias)
+1. Tené Python instalado (https://www.python.org/downloads/ — al instalar, marcá "Add python.exe to PATH").
+2. Doble clic en  herramientas\generar-voces.bat
+3. Esperá a que diga "Listo" y recargá la página del glosario.
+   En la pantalla de inicio de la historia, en "Voz", aparece "★ Voces grabadas".
+
+QUÉ CREA
+- audio\historia\*.mp3          un audio por frase
+- data\historia-audios.js       la lista que usa el juego para saber qué audio va con cada frase
+Si cambiás un texto, se graba de nuevo solo esa frase. Los audios que ya no se usan se borran solos.
+
+CAMBIAR LA VOZ
+Para elegir de oído: doble clic en  herramientas\probar-voces.bat  . Graba la misma frase con unas 20 voces
+y abre herramientas\muestras\muestras.html para escucharlas. Anotá el nombre de la que te guste.
+En data\juego-historia.js, dentro de config.voz.neural:
+  voz:        "en-US-JennyNeural" (por defecto), "en-US-AriaNeural", "en-US-AvaNeural", "en-US-EmmaNeural",
+              "en-US-AnaNeural" (nena), "en-US-GuyNeural", "en-US-AndrewNeural" (hombre)
+  velocidad:  "+10%" más rápido, "-10%" más lento
+  tono:       "+20Hz" más aguda (más estilo TikTok), "-10Hz" más grave
+Después volvé a ejecutar generar-voces.bat (se regraban todas).
+
+VOCES DE ELEVENLABS (Adam, Antoni, Brian…: las de muchos TikToks de "In this town…")
+1. Creá una cuenta gratis en https://elevenlabs.io
+2. Entrá a tu perfil > "API Keys" > "Create API Key" (que tenga permiso de Text to Speech) y copiá la clave.
+3. Creá el archivo  herramientas\clave-elevenlabs.txt  y pegá la clave adentro (una sola línea). Guardalo.
+   Esa clave es como una contraseña: no la mandes por chat ni la subas a ningún lado.
+4. Ejecutá probar-voces.bat: ahora también graba las muestras de ElevenLabs.
+5. Para usarla en el juego: en data\juego-historia.js poné  motor: "elevenlabs"  y elegí la voz en "elevenlabs".
+   Después ejecutá generar-voces.bat.
+Plan gratis: 10.000 caracteres por mes. Toda la historia con Brian y las pausas usa unos 5.400, así que alcanza para grabarla
+una vez por mes (las muestras usan unos 800). Por eso: primero probá con probar-voces.bat y
+cuando tengas los ajustes definitivos, ejecutá generar-voces.bat una sola vez. Es de uso no comercial y hay que mencionar a ElevenLabs
+(el juego lo muestra en la pantalla de inicio: "Usando voces grabadas (ElevenLabs Adam)").
+
+CAPCUT (VALENTINO)
+La voz Valentino solo existe dentro de CapCut y no se puede usar desde un programa.
+
+NOTA
+Usa el paquete gratuito edge-tts, que se conecta al servicio de lectura en voz alta de Microsoft Edge.
+No es un servicio oficial para desarrolladores: está bien para un trabajo práctico, pero podría dejar
+de funcionar algún día. Los audios que ya generaste siguen funcionando igual.
+Si falta algún audio, el juego usa la voz del navegador para esa frase.

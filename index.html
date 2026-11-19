@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tech English Glossary</title>
+<script>window.__errs=[];addEventListener("error",function(e){__errs.push(e)});</script>
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/game.css">
+<link rel="stylesheet" href="css/rosco.css">
+<link rel="stylesheet" href="css/historia.css">
+<link rel="stylesheet" href="css/juegos.css">
+</head>
+<body>
+<header class="top"><div class="bar">
+  <div class="brand"><div class="logo">TE</div><div><h1>Tech English Glossary</h1><p data-i18n="subtitle"></p></div></div>
+  <div class="search">
+    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+    <input id="q" type="search">
+  </div>
+  <div class="tools">
+    <button id="fileBtn" class="chip"></button>
+    <select id="lang" aria-label="Language"><option value="es">Español</option><option value="en">English</option></select>
+    <button id="themeBtn" class="icon" aria-label="Theme"></button>
+  </div>
+</div></header>
+<div class="layout">
+  <aside class="side">
+    <h3 data-i18n="cats"></h3><nav id="cats"></nav>
+    <h3 class="azh" data-i18n="index"></h3><nav id="az" class="az"></nav>
+  </aside>
+  <main>
+    <div class="mhead">
+      <div><h2 data-i18n="listTitle"></h2><span id="count" class="muted"></span></div>
+      <div class="tools">
+        <button id="addBtn" class="btn primary" data-i18n="add"></button>
+        <button id="juegosBtn" class="btn play" data-i18n="games"></button>
+        <button id="practiceBtn" class="btn" data-i18n="practice"></button>
+        <button id="exportBtn" class="btn" data-i18n="export"></button>
+      </div>
+    </div>
+    <div class="table">
+      <div class="thead"><span data-i18n="hTerm"></span><span data-i18n="hPron"></span><span data-i18n="hTrans"></span><span data-i18n="hCat"></span><span></span></div>
+      <div id="grid"></div>
+    </div>
+  </main>
+</div>
+<dialog id="detail"></dialog>
+<dialog id="form"></dialog>
+<dialog id="cards"></dialog>
+<dialog id="juegos"></dialog>
+<dialog id="game"></dialog>
+<dialog id="rosco"></dialog>
+<dialog id="historia"></dialog>
+<script src="data/words.js"></script>
+<script src="data/juego-uptime.js"></script>
+<script src="data/juego-rosco.js"></script>
+<script src="data/juego-historia.js"></script>
+<script src="data/historia-audios.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/spanish.js"></script>
+<script src="js/storage.js"></script>
+<script src="js/speech.js"></script>
+<script src="js/crud.js"></script>
+<script src="js/practice.js"></script>
+<script src="js/juegos.js"></script>
+<script src="js/game.js"></script>
+<script src="js/rosco.js"></script>
+<script src="js/historia.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

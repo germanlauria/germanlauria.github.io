@@ -1,0 +1,54 @@
+/* EL ROSCO — reutiliza .g-card, .g-btn, .g-seg, .g-how, etc. de game.css */
+#rosco{width:min(1040px,96vw);height:min(760px,94vh);max-height:none;padding:0;background:radial-gradient(ellipse at 30% 40%,#0f2a5c 0%,#071330 55%,#040a1c 100%);color:#e6efff;border:1px solid #23407a;border-radius:12px;overflow:hidden;flex-direction:column;font-family:"Segoe UI",system-ui,sans-serif;position:relative}
+#rosco[open]{display:flex}
+#rosco::backdrop{background:rgba(2,5,14,.85)}
+.r-top{display:flex;align-items:center;padding:10px 14px;border-bottom:1px solid rgba(88,140,255,.2)}
+.r-logo{font:800 18px ui-monospace,Consolas,monospace;letter-spacing:.2em;color:#ffd33d}
+.r-body{flex:1;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:22px;align-items:center;padding:18px 26px;min-height:0}
+.r-wheel{position:relative;width:min(100%,62vh,470px);aspect-ratio:1;margin:auto}
+.r-l{position:absolute;width:11%;aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:clamp(12px,2.1vh,18px);background:#1f6feb;color:#fff;border:2px solid #79b8ff;box-shadow:0 0 10px rgba(31,111,235,.6);transition:background .25s,transform .25s}
+.r-l.passed{background:#1f6feb;opacity:.85}
+.r-l.ok{background:#2ea043;border-color:#7ee787;box-shadow:0 0 12px rgba(46,160,67,.7)}
+.r-l.bad{background:#da3633;border-color:#ff9a95;box-shadow:0 0 12px rgba(218,54,51,.7)}
+.r-l.cur{background:#ffd33d;color:#1b1f23;border-color:#fff;transform:translate(-50%,-50%) scale(1.22);animation:rpulse 1s infinite}
+@keyframes rpulse{50%{box-shadow:0 0 22px #ffd33d}}
+.r-center{position:absolute;inset:22%;border-radius:50%;background:radial-gradient(circle,#13306b,#081a40);border:2px solid #2f5fb3;display:grid;place-content:center;text-align:center;gap:6px}
+.r-time{font:800 clamp(34px,8vh,64px) ui-monospace,Consolas,monospace;color:#fff;line-height:1}
+.r-time.low{color:#ff7b72;animation:rpulse2 .5s infinite alternate}
+@keyframes rpulse2{to{transform:scale(1.08)}}
+.r-score{display:flex;gap:14px;justify-content:center;font-weight:800;font-size:18px}
+.r-score .ok{color:#7ee787}.r-score .ok::before{content:"✔ "}
+.r-score .bad{color:#ff7b72}.r-score .bad::before{content:"✗ "}
+.r-panel{display:flex;flex-direction:column;gap:12px}
+.r-letter{font:800 64px ui-monospace,Consolas,monospace;color:#ffd33d;line-height:1}
+.r-hint{font-size:13px;letter-spacing:.08em;color:#9fb6e0;font-weight:700}
+.r-hint b{color:#fff}
+.r-tag{letter-spacing:0;font-weight:700;padding:2px 8px;border-radius:4px;color:#fff;background:#1f6feb}
+.r-tag.en{background:#8957e5}
+.r-clue{position:relative;background:rgba(10,24,56,.85);border:1px solid #2f5fb3;border-radius:10px;padding:16px 46px 16px 18px;font-size:18px;line-height:1.45;min-height:96px}
+.r-clue p{margin:0}
+.r-say{position:absolute;top:10px;right:10px;width:30px;height:30px;border-radius:50%;border:1px solid #2f5fb3;background:#0d2250;color:#9fc3ff;cursor:pointer;display:grid;place-items:center}
+.r-say svg{width:15px;height:15px;fill:currentColor}
+.r-fb{min-height:24px;font-size:15px}
+.r-fb.good{color:#7ee787}.r-fb.wrong{color:#ff9a95}
+.r-fb small{color:#9fb6e0}
+.r-form{display:flex;gap:8px;flex-wrap:wrap}
+.r-form input{flex:1;min-width:160px;background:#06112b;color:#fff;border:1px solid #2f5fb3;border-radius:8px;padding:11px 12px;font-size:16px}
+.r-form input:focus{outline:2px solid #ffd33d;outline-offset:1px}
+.r-form .g-btn{margin:0}
+.r-passb{background:#1f6feb!important;border-color:#58a6ff!important;color:#fff!important}
+#rosco .g-ov{background:rgba(4,10,28,.94)}
+.r-h{color:#ffd33d}
+.r-grid{grid-template-columns:repeat(3,1fr)!important}
+.r-rev{text-align:left;max-height:240px;overflow:auto;display:grid;gap:8px;margin-bottom:16px}
+.r-ri{display:flex;gap:10px;align-items:flex-start;background:rgba(10,24,56,.85);border:1px solid #2f5fb3;border-radius:8px;padding:8px 10px;font-size:14px}
+.r-ri.bad{border-color:#da3633}
+.r-ri p{margin:4px 0 0;color:#b9c8e6;font-size:13px}
+.r-rl{flex:none;width:28px;height:28px;border-radius:50%;background:#1f6feb;display:grid;place-items:center}
+.r-ri.bad .r-rl{background:#da3633}
+@media (max-width:760px){
+  .r-body{grid-template-columns:1fr;overflow:auto;padding:12px}
+  .r-wheel{width:min(86vw,46vh)}
+  .r-letter{font-size:40px}
+}
+#rosco .r-top{position:relative;z-index:4;background:#071330}
